@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -15,11 +16,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
-          </p>
+        
+        <form>
+          <div className={styles.userForm}>
+          <label>
+            Username:
+            <input type='text' name='username'/>
+          </label>
+          </div>
+          <div className={styles.userForm}>
+          <label>Password:
+            <input type='password' name='password'/>
+          </label>
+          </div>
+          <input type='submit' name='submit' onClick={handleClick}/>
+        </form>
+        
           <div>
             <a
               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -37,7 +49,7 @@ export default function Home() {
               />
             </a>
           </div>
-        </div>
+        
 
         <div className={styles.center}>
           <Image
